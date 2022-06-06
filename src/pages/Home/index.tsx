@@ -38,7 +38,7 @@ export function Home({ loggedUser }: HomeProps) {
 
   return (
     <>
-      <TweetForm avatar='./src/avatar.svg' />
+      <TweetForm avatar='./src/avatar.svg' loggedInUser={loggedUser} onSuccess={getData} />
       <div>
         {tweets.length > 0 && tweets.map(tweet => (
           <Tweet
