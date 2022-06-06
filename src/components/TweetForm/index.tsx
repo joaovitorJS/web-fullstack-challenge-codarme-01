@@ -16,7 +16,7 @@ export function TweetForm({ avatar, loggedInUser, onSuccess }: TweetFormProps) {
       const token = loggedInUser.accessToken;
       await axios({
         method: 'post',
-        url: 'http://localhost:3030/tweets',
+        url: `${import.meta.env.VITE_API_HOST}/tweets`,
         headers: {
           'authorization': `Bearer ${token}`
         },

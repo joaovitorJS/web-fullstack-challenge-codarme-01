@@ -23,7 +23,7 @@ export function Home({ loggedUser }: HomeProps) {
   const token = loggedUser.accessToken;
 
   async function getData() {
-    const res = await axios.get<Tweet[]>('http://localhost:3030/tweets', {
+    const res = await axios.get<Tweet[]>(`${import.meta.env.VITE_API_HOST}/tweets`, {
       headers: {
         'authorization': `Bearer ${token}`
       }
@@ -31,7 +31,6 @@ export function Home({ loggedUser }: HomeProps) {
 
     setTweets(res.data);
   }
-
   useEffect(() => {
     getData();
   }, []);
