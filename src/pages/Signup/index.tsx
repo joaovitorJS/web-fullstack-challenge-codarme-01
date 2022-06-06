@@ -2,16 +2,9 @@ import { useFormik } from 'formik';
 import { InputHTMLAttributes } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
+import { User } from '../../App';
 
 type InputProps = InputHTMLAttributes<HTMLInputElement>
-
-export type User = {
-  id: string;
-  name: string;
-  username: string;
-  email: string;
-  accessToken: string;
-}
 
 type SignupProps = {
   signInUser: (user: User) => void;

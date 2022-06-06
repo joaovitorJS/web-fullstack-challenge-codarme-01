@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactEventHandler, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 type TweetFormProps = {
   avatar: string;

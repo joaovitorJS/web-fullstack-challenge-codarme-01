@@ -1,15 +1,23 @@
 import { useState } from "react";
 
 import { Home } from "./pages/Home";
-import { Login, User } from "./pages/Login";
+import { Login } from "./pages/Login";
 import { Signup } from './pages/Signup';
 
 
-export function App() {
-  const [user, setUser] = useState({} as User);
+export type User = {
+  id: string;
+  name: string;
+  username: string;
+  email: string;
+  accessToken: string;
+}
 
-  if (user.id) {
-    return <Home />
+export function App() {
+  const [user, setUser] = useState<User | null>(null);
+
+  if (user) {
+    return <Home loggedUser={user} />
   }
 
   return window.location.pathname === '/signup'
